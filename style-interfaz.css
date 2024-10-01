@@ -1,0 +1,170 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0b0c0d, #1d1f21); /* Degradado oscuro y sutil */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Evita el scroll */
+    animation: particles 5s infinite alternate; /* Animación de partículas */
+}
+
+@keyframes particles {
+    0% {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); /* Partículas brillantes */
+    }
+    100% {
+        background: linear-gradient(135deg, rgba(0, 150, 136, 0.1), rgba(0, 150, 136, 0.05)); /* Colores más frescos */
+    }
+}
+
+#menu-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco con transparencia */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Sombra más suave y difusa */
+    padding: 40px; /* Espaciado interno */
+    width: 90%; /* Ancho adaptable */
+    max-width: 450px; /* Ancho máximo */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    position: relative; /* Posicionamiento relativo para los efectos de fondo */
+    overflow: hidden; /* Asegura que los elementos no sobresalgan */
+}
+
+#menu-container::before {
+    content: ""; /* Contenido vacío para el pseudo-elemento */
+    position: absolute; /* Posición absoluta */
+    top: 0; /* Desde la parte superior */
+    left: 0; /* Desde la izquierda */
+    right: 0; /* Desde la derecha */
+    bottom: 0; /* Desde la parte inferior */
+    background: rgba(255, 255, 255, 0.1); /* Sombra de fondo sutil */
+    border-radius: 20px; /* Bordes redondeados */
+    z-index: -1; /* Coloca detrás del contenedor */
+    transition: background 0.3s; /* Transición de fondo */
+}
+
+#menu-container:hover::before {
+    background: rgba(255, 255, 255, 0.3); /* Aumenta la sombra en hover */
+}
+
+#menu-container:hover {
+    transform: scale(1.03); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.6); /* Sombra más intensa al pasar el ratón */
+}
+
+h1 {
+    font-size: 3em; /* Tamaño grande para el título */
+    color: #00bcd4; /* Color vibrante que recuerda a la PS5 */
+    margin-bottom: 30px; /* Espacio debajo del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente divertida */
+    animation: fadeIn 1s; /* Animación de aparición */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(-20px); /* Mueve el título hacia arriba */
+    }
+    to {
+        opacity: 1; /* Termina visible */
+        transform: translateY(0); /* Regresa a su posición */
+    }
+}
+
+.menu-options {
+    display: flex; /* Disposición flexible */
+    flex-direction: column; /* Alinear botones en columna */
+    gap: 15px; /* Espacio entre botones */
+}
+
+.menu-button {
+    background: rgba(255, 255, 255, 0.2); /* Fondo blanco con transparencia */
+    color: #fff; /* Color blanco del texto */
+    border: none; /* Sin borde */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    font-size: 1.5em; /* Tamaño de fuente grande */
+    cursor: pointer; /* Cambia a cursor de mano */
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    position: relative; /* Posicionamiento relativo para animación */
+}
+
+.menu-button:hover {
+    background: rgba(255, 255, 255, 0.4); /* Color de fondo en hover */
+    transform: scale(1.05); /* Efecto de escalado en hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra más intensa en hover */
+}
+
+.menu-button::before {
+    content: ""; /* Contenido vacío para el pseudo-elemento */
+    position: absolute; /* Posición absoluta */
+    top: 0; /* Desde la parte superior */
+    left: 0; /* Desde la izquierda */
+    right: 0; /* Desde la derecha */
+    bottom: 0; /* Desde la parte inferior */
+    background: rgba(255, 255, 255, 0.15); /* Efecto de luz blanca */
+    border-radius: 15px; /* Bordes redondeados */
+    opacity: 0; /* Comienza invisible */
+    transition: opacity 0.3s; /* Transición suave de opacidad */
+}
+
+.menu-button:hover::before {
+    opacity: 1; /* Efecto de luz en hover */
+}
+
+.menu-button:focus {
+    outline: none; /* Sin contorno al enfocar */
+}
+
+.menu-button:active {
+    transform: scale(0.95); /* Efecto de pulsación al hacer clic */
+}
+
+/* Estilo para el botón "Créditos" */
+#credits {
+    background-color: rgba(255, 186, 0, 0.8); /* Color amarillo diferente para créditos */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+#credits:hover {
+    background-color: rgba(255, 186, 0, 1); /* Color al pasar el ratón */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra más intensa en hover */
+}
+
+#credits:active {
+    transform: scale(0.95); /* Efecto de pulsación al hacer clic */
+}
+
+/* Estilos para partículas de luz */
+@keyframes sunbeams {
+    0% {
+        opacity: 0.2;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0.5;
+        transform: translateY(-20px);
+    }
+}
+
+.sunbeam {
+    position: absolute;
+    width: 200%; /* Ancho mayor para cubrir la pantalla */
+    height: 10px; /* Alto de los rayos de sol */
+    background: rgba(255, 255, 0, 0.4); /* Color de los rayos de sol */
+    opacity: 0.2; /* Comienza suave */
+    pointer-events: none; /* No interactuable */
+    animation: sunbeams 2s infinite alternate; /* Animación de rayos de sol */
+}
+
+.sunbeam:nth-child(odd) {
+    transform: rotate(10deg); /* Rotación ligera para variación */
+}
+
+.sunbeam:nth-child(even) {
+    transform: rotate(-10deg); /* Rotación ligera para variación */
+}

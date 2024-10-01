@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRES EN RAYA</title>
+    <link rel="stylesheet" href="style-interfaz.css">
+    <link rel="stylesheet" href="destellos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            background-color: rgba(30, 30, 30, 0.9);
+        }
+
+        /* Botón de música */
+        #music-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 152, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1000;
+        }
+
+        #music-button:hover {
+            background-color: rgba(255, 152, 0, 1);
+            transform: scale(1.1);
+        }
+
+        #music-button i {
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón de música con ícono -->
+    <div id="music-button">
+        <i class="fas fa-volume-up"></i>
+    </div>
+
+    <!-- Audio que se reproducirá o pausará con el botón -->
+    <audio id="backgroundMusic" src="TRES EN RAYA/Interfaz/sound/confirmar.wav" preload="auto" loop></audio>
+
+    <script>
+        const musicButton = document.getElementById('music-button');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        // Inicia la música automáticamente
+        window.addEventListener('load', () => {
+            backgroundMusic.play();
+        });
+
+        // Funcionalidad para reproducir o pausar la música con el botón
+        musicButton.addEventListener('click', () => {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            } else {
+                backgroundMusic.pause();
+            }
+        });
+    </script>
+    
+</body>
+</html>
